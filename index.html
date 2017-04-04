@@ -2,31 +2,34 @@
 <html>
 
 <head>
+  <title>Christie Lynam</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="reset.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="reset.css">
   <link href="styles.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,700" rel="stylesheet">
-  <title>Christie Lynam</title>
 </head>
 
 <body>
-  <main class="container">
-    <section class="box-container">
+  <main class="wrapper">
+    <section class="grid">
       <header>
         <h1>Christie Lynam</h1>
         <p>Cupcake ipsum dolor. Sit amet toffee lollipop. Tootsie roll chocolate danish fruitcake</p>
         <div>
-          <button type="button" name="button"><a class="btn-text" href="#"><img class="btn-icon" src="photos/resume-document.svg" alt="resume-icon" /> Resume</a></button>
-          <button type="button" name="button"><a class="btn-text" href="#"><img class="btn-icon" src="photos/information.svg" alt="contact-icon" /> Contact</a></button>
-          <button id="profile-btn" type="button" name="button"><a class="btn-text" href="#"><img class="btn-icon" src="photos/profile.svg" alt="profile-icon" />Profile</a></button>
+          <button type="button" name="button" class="resume-btn">Resume</button>
+          <button type="button" name="button" class="contact-btn">Contact</button>
+          <button id="profile-btn" type="button" name="button">Profile</button>
         </div>
       </header>
       <article class="box" id="profile">
         <a id="profile-links" href="#"><img class="icon-boxes" src="photos/profile.svg" alt="profile-icon" />Profile</a>
       </article>
       <article class="box" id="experience">
-        <a href="#"><img class="icon-boxes" src="photos/charging-battery.svg" alt="experience-icon" />Experience</a>
+        <a href="#">
+          <img class="icon-boxes" src="photos/charging-battery.svg" alt="experience-icon" />
+          <p>Experience</p>
+        </a>
       </article>
       <article class="box" id="education">
         <a href="#"><img class="icon-boxes" src="photos/idea.svg" alt="education-icon" />Education</a>
@@ -41,11 +44,14 @@
         <a href="#"><img class="icon-boxes" src="photos/at.svg" alt="contact-icon" />Contact</a>
       </article>
       <article class="box" id="portfolio">
-        <a href="#"><img class="icon-boxes" src="photos/services-portfolio.svg" alt="portfolio-icon" />Portfolio</a>
+        <a href="#">
+          <img class="icon-boxes" src="photos/services-portfolio.svg" alt="portfolio-icon" />
+          <p>Portfolio</p>
+        </a>
       </article>
     </section>
     <aside class="photo-container">
-      <img class="me" src="photos/IMG_0211.jpg" alt="me">
+      <!-- <img class="me" src="photos/IMG_0211.jpg" alt="me"> -->
     </aside>
   </main>
 </body>

@@ -2,54 +2,56 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+}
+
 body {
-  margin: 0;
   font-family: 'Ubuntu', sans-serif;
   color: #ffffff;
 }
 
-.container {
-  width: 100%;
-  height: 100vh;
+.wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
-.box-container {
+.grid {
   display: flex;
-  flex-wrap: wrap;
-  float: left;
-  width: 60%;
-  height: 100vh;
+  flex-direction: column;
 }
 
 .photo-container {
-  float: right;
-  width: 40%;
-  height: 100vh;
-  background-color: grey;
+  display: none;
+  background: grey url(photos/IMG_0211.jpg) no-repeat;
+  background-size: cover;
 }
 
 .box {
   display: flex;
-  width: 33.33333%;
-  height: 33.33333vh;
   justify-content: center;
   align-items: center;
+  min-height: 150px;
+}
+
+.icon-boxes {
+  width: 60px;
 }
 
 header {
-  width: 66.66666%;
-  height: 33.33333vh;
+  padding: 20px;
 }
 
 h1 {
-  padding: 15px 25px;
   font-size: 45px;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
 p {
-  padding: 5px 25px;
   font-size: 24px;
   font-weight: 300;
   letter-spacing: 2px;
@@ -57,17 +59,18 @@ p {
 }
 
 button {
-  display: inline-flex;
-  width: 30%;
-  margin: 10px 25px 25px 25px;
   border: 2px solid #fff;
   padding: 10px;
   font-family: inherit;
-  justify-content: center;
-  align-content: center;
   text-transform: uppercase;
   color: #fff;
-  background-color: #5FD4AF;
+  background-color: transparent;
+}
+
+.resume-btn {
+  background: url(photos/resume-document.svg) no-repeat;
+  background-size: 20px;
+  background-position: 10px 50%;
 }
 
 .btn-text {
@@ -77,10 +80,6 @@ button {
 .btn-icon {
   width: 25px;
   vertical-align: middle;
-}
-
-.photo-box {
-  display: none;
 }
 
 #profile-btn {
@@ -112,199 +111,34 @@ header,
   background-color: #59616A;
 }
 
-.icon-boxes {
-  display: block;
-  padding-bottom: 15px;
-  width: 100px;
-  margin: auto;
-}
 
 .me {
   width: 100%;
-  height: 100vh;
 }
 
+@media(min-width: 540px) {
+  .grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
-/*Media queries*/
-
-@media screen and (max-width: 1180px) {
-
-  .btn-text {
-    font-size: 16px;
+  .box {
+    flex: 1 1 50%;
   }
 }
 
-@media screen and (max-width: 1024px) {
-
-  header {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  header div {
-    display: inline-block;
-  }
-
-  button {
-    width: 20%;
-  }
-
-  .btn-text {
-    font-size: 16px;
-  }
-
-  .btn-icon {
-    width: 20px;
-  }
-
-  #profile-btn {
-    display: inline-flex;
-  }
-
-  p {
-    padding: 25px;
-  }
-
-  .icon-boxes {
-    width: 100px;
-  }
-
-  #profile {
-    background-image: url("photos/IMG_0211.jpg");
-    background-size: cover;
-}
-
-  #profile-links {
-    display: none;
-  }
-
+@media(min-width: 870px) {
   .photo-container {
-    display: none;
+    display: block;
+    flex-direction: row;
   }
 
-  .box-container {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 890px) {
-
-  button {
-    width: 25%;
-    margin: 20px;
-  }
-}
-
-@media screen and (max-width: 765px) {
-
-  header {
-    width: 100%;
-    height: 40vh;
+  .wrapper {
+    flex-direction: row;
   }
 
-  #profile {
-    display: none;;
-  }
-
-  #experience,
-  #education,
-  #blog,
-  #social,
-  #contact,
-  #portfolio {
-    height: 20vh;
-  }
-
-  #blog {
-    background-color: #FF9554;
-  }
-
-  #social {
-    background-color: #5FD4AF;
-  }
-
-  .box {
+  .grid,
+  .photo-container {
     width: 50%;
-    min-height: 20%;
-  }
-}
-
-@media screen and (max-width: 510px) {
-
-  p {
-    padding: 10px 25px;
-    line-height: 25px;
-  }
-
-  .icon-boxes {
-    width: 75px;
-  }
-
-  header div {
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 15px;
-  }
-
-  button {
-    margin: 10px;
-  }
-}
-
-@media screen and (max-width: 380px) {
-
-  h1 {
-    font-size: 40px;
-  }
-}
-
-
-@media screen and (max-width: 325px) {
-
-  h1 {
-    font-size: 35px;
-  }
-
-  p {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  .btn-text {
-    font-size: 14px;
-  }
-
-  .btn-icon {
-    display: none;
-  }
-
-  .box {
-    width: 100%;
-  }
-
-  .icon-boxes {
-    width: 50px;
-    padding-bottom: 10px;
-  }
-
-  a {
-    font-size: 16px;
-  }
-
-  #education {
-    background-color: #59616A;
-  }
-
-  #experience {
-    background-color: #FF9554;
-  }
-
-  #contact {
-    background-color: #FF9554;
-  }
-
-  #portfolio {
-    background-color: #59616A;
   }
 }
